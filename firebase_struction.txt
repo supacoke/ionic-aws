@@ -1,0 +1,28 @@
+tracker
+- tid
+--timestamp
+--tdataid: boolean
+--value: any
+
+tracking_data
+-tdataid
+--name:Arms
+--sid:true
+-tdataid
+--name:Skating
+--sid:true
+-tdataid
+
+game_tracking_data
+-gdataid
+--name:Goals
+--sid: true
+-gdataid
+--name:Assists
+--sid: true
+
+sports
+-sid
+--name:hockey
+-sid
+--name:workouts

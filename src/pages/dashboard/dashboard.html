@@ -1,0 +1,72 @@
+<!--
+  Generated template for the Dashboard page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Dashboard</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+  <div>
+    <ul>
+      <li *ngFor="let day of week">
+        {{day.day}}
+        <div *ngIf="day.programs">
+          <div *ngFor="let program of day.programs" (click)="viewProgram(program.$key)">
+            {{program.title}}
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <h2>Admin</h2>
+  <div>
+    <ion-list>
+      <ion-item>
+        <ion-label>Add Sport</ion-label>
+        <ion-input [(ngModel)]="sportName"></ion-input>
+      </ion-item>
+      <button ion-button (click)="saveSport()">Save</button>
+    </ion-list>
+
+    <div>Add Tracking Data</div>
+    <ion-list>
+      <ion-item>
+        <ion-label>Name</ion-label>
+        <ion-input [(ngModel)]="trackingDataName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Sport</ion-label>
+        <ion-select [(ngModel)]="trackingDataSport">
+          <ion-option *ngFor="let sport of sports" value="{{sport.$key}}">{{sport.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <button ion-button (click)="saveTrackingData()">Save</button>
+    </ion-list>
+
+    <div>Add Game Data</div>
+    <ion-list>
+      <ion-item>
+        <ion-label>Name</ion-label>
+        <ion-input [(ngModel)]="gameDataName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Sport</ion-label>
+        <ion-select [(ngModel)]="gameDataSport">
+          <ion-option *ngFor="let sport of sports" value="{{sport.$key}}">{{sport.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <button ion-button (click)="saveGameData()">Save</button>
+    </ion-list>
+  </div>
+</ion-content>

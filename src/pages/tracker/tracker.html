@@ -1,0 +1,38 @@
+<!--
+  Generated template for the Tracker page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>tracker</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+ <ion-grid>
+  <ion-row>
+    <ion-col>
+      Did you do something to complete you goals today?
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-xs-12 col-md-4>
+      <button ion-button (click)="track('yes')">Yes</button>
+    </ion-col>
+    <ion-col col-xs-12 col-md-4>
+      <button (click)="track('no')" ion-button>No</button>
+    </ion-col>
+    <ion-col col-xs-12 col-md-4>
+      <button ion-button (click)="track('rest')">Rest Day</button>
+    </ion-col>
+    <ion-col col-xs-12 col-md-4>
+      <button ion-button (click)="track('game')">Game Day</button>
+    </ion-col>
+  </ion-row>
+ </ion-grid>
+</ion-content>
